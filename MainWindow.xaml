@@ -1,0 +1,26 @@
+﻿<Window x:Class="Peliculas.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:Peliculas"
+        mc:Ignorable="d"
+        Title="Peliculas" Height="392" Width="800">
+
+    <Grid Margin="0,0,0,16">
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="793*"/>
+            <ColumnDefinition Width="7*"/>
+        </Grid.ColumnDefinitions>
+        <Menu x:Name="menuPrincipal" HorizontalContentAlignment="Left" Grid.ColumnSpan="2" Height="25" VerticalAlignment="Top">
+            <MenuItem Header="Archivo" Click="MenuItem_Click">
+                <MenuItem x:Name="nuevaPelicula" Header="Nuevo..." HorizontalAlignment="Left" Width="145"/>
+                <MenuItem Header="Ayuda"/>
+            </MenuItem>
+        </Menu>
+        <DataGrid x:Name="dataGridPeliculas" ItemsSource="{Binding Path=listaPeliculas}" Height="196" Margin="10,50,10,0" VerticalAlignment="Top" AutoGenerateColumns="True"/>
+        <Button x:Name="ButtonModificar" Content="Modificar" Width="150" Height="50" Margin="600,270,40,20" Click="ButtonModificar_Click" />
+
+
+    </Grid>
+</Window>
